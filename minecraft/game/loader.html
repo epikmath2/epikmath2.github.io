@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <title>Epik Math 2 | Game Is Loading...</title>
+</head>
+<body>
+    <h1 class="headerText">Epik Math 2 | The Game ${gameName} is loading...</h1>
+    <br>
+    <h2 class="counter">${counted}/${count} files verified...</h2>
+    <div class="loading"></div>
+    <style>
+        body{
+            text-align: center;
+            background-color: #26268c;
+        }
+        .loading {
+  position: relative;
+  left: -9999px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #9880ff;
+  color: #9880ff;
+  box-shadow: 9999px 0 0 -5px;
+  animation: loading 1.5s infinite linear;
+  animation-delay: 0.25s;
+  margin-left: 50%;
+  margin-right: 50%;
+  margin-top: 20%;
+}
+.loading::before, .loading::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #9880ff;
+  color: #9880ff;
+}
+.loading::before {
+  box-shadow: 9984px 0 0 -5px;
+  animation: loading-before 1.5s infinite linear;
+  animation-delay: 0s;
+}
+.loading::after {
+  box-shadow: 10014px 0 0 -5px;
+  animation: loading-after 1.5s infinite linear;
+  animation-delay: 0.5s;
+}
+
+@keyframes loading-before {
+  0% {
+    box-shadow: 9984px 0 0 -5px;
+  }
+  30% {
+    box-shadow: 9984px 0 0 2px;
+  }
+  60%, 100% {
+    box-shadow: 9984px 0 0 -5px;
+  }
+}
+@keyframes loading {
+  0% {
+    box-shadow: 9999px 0 0 -5px;
+  }
+  30% {
+  box-shadow: 9999px 0 0 2px;
+  }
+  60%, 100% {
+    box-shadow: 9999px 0 0 -5px;
+  }
+}
+@keyframes loading-after {
+  0% {
+    box-shadow: 10014px 0 0 -5px;
+  }
+  30% {
+    box-shadow: 10014px 0 0 2px;
+  }
+  60%, 100% {
+    box-shadow: 10014px 0 0 -5px;
+  }
+}
+    </style>
+    <script>
+      //Made By BioShot aka Levi A\\
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const gameName = urlParams.get('game');
+        const gameUrl = '../../'+urlParams.get('url');
+        const flist = gameUrl+'/'+urlParams.get('flist');
+        $(".headerText").text(`Epik Math 2 | The Game ${gameName} is loading...`);
+        $(document).ready(function () {
+            $.getJSON(flist,
+                function (data, textStatus, jqXHR) {
+                  var files = data["files"]
+                  var count = data["count"]
+                  var counted = 0;
+                  var errorS=false;
+                  files.forEach(file => {
+
+                    $.ajax({
+                      url: file,
+                      method: "GET",
+                      success: function (response) {
+                        $(".counter").text(`${counted}/${count} files verified...`)
+                        console.log(counted);
+                        counted += 1;
+                        console.log("Verified file: " + file);
+                        if(counted == count && errorS == false){
+                          window.location = gameUrl;
+                        }
+                      },
+                      error: function (response) {
+                        alert("Error! The file "+file+" could not be verified! (File Not Found) Closing in 3 seconds...");
+                        errorS = true;
+                        setTimeout(function () {
+                          window.close();
+                        }, 3000)
+                      }
+                    });
+                  });
+                }
+            );
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>Play!</title>
+
+</head>
+<body>
+    <br>
+    <br><br><br><br><br><br>
+    <h1>Sorry! But due to bugs, you have to Click Play to summon the game window!</h1>
+    <br>
+    <button type="button" id="PlayBtn">Play</button>
+    <style>
+        body{
+            text-align: center;
+        }
+		button {
+			color: #ffffff;
+			background-color: #2d63c8;
+			font-size: 19px;
+			border: 1px solid #2d63c8;
+			border-radius: 26px;
+			padding: 15px 50px;
+			cursor: pointer
+		}
+		button:hover {
+			color: #2d63c8;
+			background-color: #ffffff;
+		}
+	</style>
+    <script>
+        $(document).ready(function() {
+            $("#PlayBtn").click(function (){
+                window.open(`game/loader.html?game=minecraft&url=minecraft/game&flist=flist.json`,"Epik Math 2 | Game Window","popup");
+            });
+        });
+    </script>
+</body>
+</html>

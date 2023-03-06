@@ -1,0 +1,30 @@
+{
+    "count": 23,
+    "files": [
+        "flist.json",
+        "classes_server.js",
+        "bg.png",
+        "loader.html",
+        "index.html",
+        "eagswebrtc.js",
+        "ProductSans.ttf",
+        "README.md",
+        "vercel.json",
+        "worker_bootstrap.js",
+        "classes.js.map",
+        "classes.js",
+        "classes_server.js.map",
+        "arc-sw.js",
+        "packs/bombies.epk",
+        "packs/bones.epk",
+        "packs/defaultnew.epk",
+        "packs/defaultold.epk",
+        "packs/miamiprivate.epk",
+        "packs/publicls.epk",
+        "packs/modifiednew.epk",
+        "packs/nebula.epk",
+        "packs/ricefault.epk",
+        "packs/tightfault.epk",
+        "packs/walifault.epk"
+    ]
+}
