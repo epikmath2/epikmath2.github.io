@@ -1,0 +1,59 @@
+
+{
+    "author": "BioShot aka Levi A.",
+    "message": "Fixed earthbound(Press E When you get into the page for earthbound...) And added 1v1-lol! More updates coming soon!",
+    "gamesList": [
+        {
+            "name": "retro-bowl",
+            "icon": "rb.png"
+        },
+        {
+            "name": "geometry-dash",
+            "icon": "gd.png"
+        },
+        {
+            "name": "osu",
+            "icon": "osu.png"
+        },
+        {
+            "name": "earthbound",
+            "icon": "earthbound.jpg"
+        },
+      {
+            "name": "subway-surfers",
+            "icon":"ss.png"
+      },
+      {
+            "name": "Hoops",
+            "icon":"hoops.png"
+      },
+      {
+            "name": "pixel-speedrun",
+            "icon":"pixel-speedrun.jfif"
+      },
+      {
+            "name":"retro-basketball",
+            "icon":"rbb.png"
+      },
+      {
+            "name":"onevonelol",
+            "icon":"1v1.png"
+      },
+      {
+	    "name":"msc2",
+	    "icon":"msc.jpg"
+      },
+      {
+      	    "name":"capcut",
+	    "icon":"capcut.png"
+      },
+      {
+            "name":"minecraft",
+	      "icon":"minecraft.jpg"
+      },
+      {
+	    "name":"lozlttp",
+	    "icon":"lozlttp.png"
+      }
+]
+}
